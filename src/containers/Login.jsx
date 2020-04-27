@@ -18,8 +18,7 @@ const Login = props => {
   }
   const handleSubmit = event => {
     event.preventDefault();
-    console.log(form);
-    loginRequest(form);
+    props.loginRequest(form);
     props.history.push('/');
   }
   return (
@@ -54,6 +53,6 @@ const Login = props => {
 
 const mapDispatchToProps = {
   loginRequest,
-}
+};
 
 export default connect(null, mapDispatchToProps)(Login);

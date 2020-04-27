@@ -8,15 +8,20 @@ import plusIcon from '../assets/static/plus-icon.png';
 import removeIcon from '../assets/static/remove-icon.png';
 
 const CarouselItem = (props) => {
+
   const { id, cover, title, year, contentRating, duration, isFav } = props;
+
   const handleSetFavorite = () => {
+    let isFav = true;
     props.setFavorite({
-      id, cover, title, year, contentRating, duration,
+      id, cover, title, year, contentRating, duration, isFav,
     });
   };
+
   const handleUnsetFavorite = (itemId) => {
     props.unsetFavorite(itemId);
   };
+
   return (
     <div className='carousel-item'>
       <img className='carousel-item__img' src={cover} alt={title}  />
